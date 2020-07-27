@@ -15,7 +15,7 @@ TF-IDF
 fasttext有工具包，安装后
 
 具体实现代码如下：
-、、、
+```
 import pandas as pd
 from sklearn.metrics import f1_score
 
@@ -30,4 +30,4 @@ model = fasttext.train_supervised('train.csv', lr=1.0, wordNgrams=2,
 
 val_pred = [model.predict(x)[0][0].split('__')[-1] for x in train_df.iloc[-5000:]['text']]
 print(f1_score(train_df['label'].values[-5000:].astype(str), val_pred, average='macro'))
-、、、
+```
