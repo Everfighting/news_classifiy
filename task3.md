@@ -3,7 +3,7 @@
 学习文档里面给了两种方案：Count Vectors + RidgeClassifier 和 TF-IDF + RidgeClassifier
 最后tf-idf的特征提取方式准确率更高。
 
-、、、
+```
 # Count Vectors + RidgeClassifier
 import pandas as pd
 
@@ -22,10 +22,10 @@ clf.fit(train_test[:10000], train_df['label'].values[:10000])
 val_pred = clf.predict(train_test[10000:])
 print(f1_score(train_df['label'].values[10000:], val_pred, average='macro'))
 # 0.74
-、、、
+```
 
 
-、、、
+```
 # TF-IDF + RidgeClassifier
 import pandas as pd
 
@@ -44,10 +44,10 @@ clf.fit(train_test[:10000], train_df['label'].values[:10000])
 val_pred = clf.predict(train_test[10000:])
 print(f1_score(train_df['label'].values[10000:], val_pred, average='macro'))
 # 0.87
-、、、
+```
 
 自己想采用SVM作为分类器，代码如下
-、、、
+```
 # TF-IDF + SVM
 import pandas as pd
 
@@ -66,5 +66,5 @@ clf.fit(train_test[:10000], train_df['label'].values[:10000])
 val_pred = clf.predict(train_test[10000:])
 print(f1_score(train_df['label'].values[10000:], val_pred, average='macro'))
 # 0.20
-、、、
+```
 SVM的结果好像很差，不知道什么原因。
